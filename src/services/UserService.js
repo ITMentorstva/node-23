@@ -7,14 +7,24 @@ module.exports = {
     register: async (name, email, password) => {
         const hashed = await bcrypt.hash(password, 10);
         return prisma.user.create({
-            data: {name, email, password:hashed}
+            data: {name, email, password:hashed},
+            select: {
+                id: true,
+                email: true,
+                name: true
+            }
         })
     },
 
     login: async (email, password) => {
 
         const user = await prisma.user.findUnique({
-            where: {email}
+            where: {email},
+            select: {
+                id: true,
+                email: true,
+                name: true
+            }
         });
 
         if(!user) return null;

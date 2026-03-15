@@ -1,0 +1,10 @@
+### Create event
+POST {{ host }}/events
+Content-Type: {{ contentType }}
+
+{
+    "title": "{{ $random.book.title }}",
+    "description": "{{ $random.superhero.descriptor }}",
+    "ticket_price": {{ $random.float (1, 1000) }},
+    "due_date": "2026-12-12T18:00:00.000Z"
+}

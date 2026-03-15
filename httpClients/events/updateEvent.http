@@ -1,0 +1,7 @@
+### Create event
+PUT {{ host }}/events/69b7261e9adfa6ceae124b46
+Content-Type: {{ contentType }}
+
+{
+    "description": "{{ $random.book.title }}"
+}

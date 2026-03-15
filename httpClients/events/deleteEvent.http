@@ -1,0 +1,3 @@
+### Create event
+DELETE {{ host }}/events/69b7232dbb8e69ba74519a9e
+Content-Type: {{ contentType }}

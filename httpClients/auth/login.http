@@ -1,5 +1,5 @@
 ### Login user
-POST {{ host }}/login
+POST {{ host }}/auth/login
 Content-Type: {{ contentType }}
 
 {

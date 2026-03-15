@@ -15,3 +15,18 @@ model User {
   name      String?
   password  String
 }
+
+model Event {
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  title         String
+  description   String
+  ticket_price  Float
+  due_date      DateTime
+  status        EventStatus @default(ACTIVE)
+  createdAt     DateTime @default(now())
+}
+
+enum EventStatus {
+  ACTIVE
+  CANCELED
+}
