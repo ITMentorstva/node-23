@@ -1,0 +1,9 @@
+### Register user
+POST {{ host }}/register
+Content-Type: {{ contentType }}
+
+{
+  "name": "{{ $random.name.name }}",
+  "email": "{{ $random.email }}",
+  "password": "d121d1"
+}

@@ -1,0 +1,8 @@
+### Login user
+POST {{ host }}/login
+Content-Type: {{ contentType }}
+
+{
+  "email": "fnj5krU8LNL4@iYzELr.nl",
+  "password": "d121d1"
+}
