@@ -23,7 +23,8 @@ module.exports = {
             select: {
                 id: true,
                 email: true,
-                name: true
+                name: true,
+                password: true
             }
         });
 

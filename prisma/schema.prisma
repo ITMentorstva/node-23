@@ -9,11 +9,14 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// role -> USER/ADMIN -> default: USER
+
 model User {
   id        String @id @default(auto()) @map("_id") @db.ObjectId
   email     String @unique
   name      String?
   password  String
+  role      UserRoles @default(USER)
 }
 
 model Event {
@@ -24,6 +27,11 @@ model Event {
   due_date      DateTime
   status        EventStatus @default(ACTIVE)
   createdAt     DateTime @default(now())
+}
+
+enum UserRoles {
+  USER
+  ADMIN
 }
 
 enum EventStatus {

@@ -2,6 +2,8 @@
 const express = require("express");
 const app = express();
 
+const addRoleToUsers = require("src/scripts/addRoleToUsers");
+
 const authRouter = require("./config/routes/auth");
 const userRouter = require("./config/routes/users");
 const eventRouter = require("./config/routes/events");

@@ -3,6 +3,7 @@ const prisma = require("../../prismaClient");
 const UserService = require("../services/UserService");
 const prismaStatusCodes = require("../../config/prismaStatusCodes");
 const jwt = require("../utils/jwt");
+const jsonWebToken = require("jsonwebtoken");
 
 module.exports = {
 
@@ -32,6 +33,20 @@ module.exports = {
                 }
             })
         })
+    },
+
+    getUser: async (req, res) => {
+
+        let user;
+        user = await prisma.user.findUnique({
+            where: {id: req.userId},
+            select: {id: true, name: true, email: true}
+        });
+
+        if(!user) return res.status(404).json({message: "User not found"});
+
+        res.json(user);
+
     }
 
 };
